@@ -1,0 +1,227 @@
+/* IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
+/* VARIABLES */
+/* MIXINS */
+/* ANIMATIONS */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* GENERAL */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #141414;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* APP PAGE STYLES */
+#app-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app-container #interface-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70%;
+}
+
+#app-container #interface-info-container #app-heading {
+  background-color: #0c0c0c;
+  padding: .5rem 2rem;
+  border-radius: 10px;
+  font-size: 2rem;
+  color: #e0e0e0;
+}
+
+#app-container #interface-info-container #redo-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0c0c0c;
+  color: #e0e0e0;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+
+#app-container #interface-info-container #redo-button:hover {
+  background-color: #e0e0e0;
+  color: #0c0c0c;
+  cursor: pointer;
+}
+
+#app-container #interface-info-container #wrong-guess-count {
+  color: #e0e0e0;
+  background-color: #0c0c0c;
+  border-radius: 10px;
+  padding: 1.25rem 2rem;
+}
+
+/* OUTPUT COMPONENT */
+#output-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 3rem auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#output-container .fadeIn {
+  -webkit-animation: fadeIn 250ms ease;
+          animation: fadeIn 250ms ease;
+}
+
+#output-container #hangman-image-container #img {
+  -webkit-animation: fadeIn 250ms ease;
+          animation: fadeIn 250ms ease;
+}
+
+#output-container #hidden-word-container #hidden-word {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#output-container #hidden-word-container #hidden-word .letter-slot {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin: 1rem .5rem;
+  width: 50px;
+  border-bottom: #e0e0e0 solid 3px;
+}
+
+#output-container #hidden-word-container #hidden-word .letter-slot .hidden-letter {
+  visibility: hidden;
+  margin: .5rem .5rem;
+}
+
+#output-container #hidden-word-container #hidden-word .letter-slot .visible-letter {
+  margin: .5rem .5rem;
+  visibility: visible;
+  text-transform: uppercase;
+  -webkit-animation: fadeIn 250ms ease;
+          animation: fadeIn 250ms ease;
+}
+
+/* KEYBOARD COMPONENT */
+#keyboard-container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#keyboard-container .row .keyboard-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  margin: 1rem .5rem;
+  background-color: #0c0c0c;
+  color: #e0e0e0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+
+#keyboard-container .row .keyboard-item:hover {
+  width: 55px;
+  height: 55px;
+  background-color: #0f0f0f;
+  cursor: pointer;
+}
+
+#keyboard-container .row .right-guess {
+  color: #0c0c0c;
+  background-color: #e0e0e0;
+}
+
+#keyboard-container .row .right-guess:hover {
+  width: 55px;
+  height: 55px;
+  background-color: #e0e0e0;
+}
+
+#keyboard-container .row .wrong-guess {
+  background-color: #280D0D;
+}
+
+#keyboard-container .row .wrong-guess:hover {
+  width: 55px;
+  height: 55px;
+  background-color: #280D0D;
+}
+/*# sourceMappingURL=App.css.map */

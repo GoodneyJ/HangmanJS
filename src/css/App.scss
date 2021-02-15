@@ -1,0 +1,185 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+/* VARIABLES */
+$backgroundColor: #141414;
+$tileColor: #0c0c0c;
+$offWhite: #e0e0e0;
+$fontFamily: 'Open Sans', sans-serif;
+
+/* MIXINS */
+@mixin centerContent() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* GENERAL */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $backgroundColor;
+    font-family: $fontFamily;
+}
+
+/* APP PAGE STYLES */
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #interface-info-container {
+        @include centerContent();
+        justify-content: space-between;
+        width: 70%;
+
+
+        #app-heading {
+            background-color: $tileColor;
+            padding: .5rem 2rem;
+            border-radius: 10px;
+            font-size: 2rem;
+            color: $offWhite;
+        }
+
+        #redo-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $tileColor;
+            color: $offWhite;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            transition: all 250ms ease;
+
+            &:hover {
+                background-color: $offWhite;
+                color: $tileColor;
+                cursor: pointer;
+            }
+        }
+
+        #wrong-guess-count {
+            color: $offWhite;
+            background-color: $tileColor;
+            border-radius: 10px;
+            padding: 1.25rem 2rem;
+        }
+
+
+    }
+}
+
+/* OUTPUT COMPONENT */
+
+#output-container {
+    @include centerContent();
+    margin: 3rem auto;
+    flex-direction: column;
+
+    .fadeIn {
+        animation: fadeIn 250ms ease;
+    }
+
+    #hangman-image-container {
+
+        #img {
+            animation: fadeIn 250ms ease;
+        }
+    }
+
+    #hidden-word-container {
+        #hidden-word {
+            @include centerContent();
+
+            .letter-slot {
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: $offWhite;
+                margin: 1rem .5rem;
+                width: 50px;
+                border-bottom: $offWhite solid 3px;
+
+                .hidden-letter {
+                    visibility: hidden;
+                    margin: .5rem .5rem;
+                }
+
+                .visible-letter {
+                    margin: .5rem .5rem;
+                    visibility: visible;
+                    text-transform: uppercase;
+                    animation: fadeIn 250ms ease;
+                }
+            }
+
+        }
+    }
+}
+
+
+/* KEYBOARD COMPONENT */ 
+
+#keyboard-container {
+
+    .row {
+        @include centerContent();
+        .keyboard-item {
+            @include centerContent();
+            text-align: center;
+            height: 50px;
+            width: 50px;
+            border-radius: 10px;
+            margin: 1rem .5rem;
+            background-color: $tileColor;
+            color: $offWhite;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: all 250ms ease;
+
+            &:hover {
+                width: 55px;
+                height: 55px;
+                background-color: #0f0f0f;
+                cursor: pointer;
+            }
+        }
+
+        .right-guess {
+            color: $tileColor;
+            background-color: $offWhite;
+
+            &:hover {
+                width: 55px;
+                height: 55px;
+                background-color: $offWhite;
+            }
+        }
+
+        .wrong-guess {
+            background-color: #280D0D;
+
+            &:hover {
+                width: 55px;
+                height: 55px;
+                background-color: #280D0D;
+            }
+        }
+    }
+}
+
