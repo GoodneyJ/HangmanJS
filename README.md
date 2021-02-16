@@ -1,6 +1,6 @@
 ##About
-Hey there 👋 
 
+Hey there 👋 
 Just a basic Hangman game that I made in a couple hours. I made the images and the design in figma then coded it in.
 It chooses a random word from state and gives the player up to 4 wrong guesses before it locks them out and they have to hit the reset button which clears all applied classes and state as well as chooses another random word.
 
